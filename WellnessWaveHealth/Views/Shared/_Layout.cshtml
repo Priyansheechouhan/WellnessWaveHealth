@@ -1,42 +1,348 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <meta charset="utf-8">
+    <title>MedicCare</title>
+
+
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Slick Carousel -->
+
+    <link href="~/plugins/slick/slick.css" rel="stylesheet" />
+    <link href="~/plugins/slick/slick-theme.css" rel="stylesheet" />
+    <!-- FancyBox -->
+    <link href="~/plugins/fancybox/jquery.fancybox.min.css" rel="stylesheet" />
+    <!-- Stylesheets -->
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/css/slider.css" rel="stylesheet" />
+    <!--Favicon-->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
 </head>
+
+
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    <div class="page-wrapper">
+        <!-- Preloader -->
+        <!-- <div class="preloader"></div> -->
+        <!-- Preloader -->
+        <!--header top-->
+        <div class="header-top">
+            <div class="container clearfix">
+                <div class="top-left">
+                    <h6>Opening Hours : Saturday to Tuesday - 8am to 10pm</h6>
+                </div>
+                <div class="top-right">
+                    <ul class="social-links">
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-google-plus" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-instagram" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+        </div>
+        <!--header top-->
+        <!--Header Upper-->
+        <section class="header-uper">
+            <div class="container clearfix">
+                <div class="logo">
+                    <figure>
+                        <a href="index.html">
+                            @*<img src="~/project/medic-master/medic-master/images/logo.png" alt="" width="130" />*@
+
+                        </a>
+                    </figure>
+                </div>
+                <div class="right-side">
+                    <ul class="contact-info">
+                        <li class="item">
+                            <div class="icon-box">
+                                <i class="fa fa-envelope-o"></i>
+                            </div>
+                            <strong>Email</strong>
+                            <br>
+                            <a href="#">
+                                <span>info@medic.com</span>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <div class="icon-box">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <strong>Call Now</strong>
+                            <br>
+                            <span>+ (88017) - 123 - 4567</span>
+                        </li>
+                    </ul>
+                    <div class="link-btn">
+                        <a href="~/Home/Appointment" class="btn-style-one">Appoinment</a>
+                    </div>
+                    <div class="link-btn">
+                        <a href="#" class="btn-style-one">Pay Online</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Header Upper-->
+        <!--Main Header-->
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="btn btn-white" style="float:right; margin:5px 0px;">
+                    <a href="#" class="btn-style-one" style="background-color: white; color: #48bdc5;">Log In</a>
+                </div>
+                <div class="btn btn-white" style="float: right; margin: 5px 0px;">
+                    <a href="#" class="btn-style-one" style="background-color: white; color: #48bdc5;">Sign Up</a>
+                </div>
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                            aria-expanded="false" style="float:left; margin:17px 0px;">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="~/Home/Index" style="background-color: #48bdc5;">Home</a>
+                        </li>
+                        <li>
+                            <a href="~/Home/About">About</a>
+                        </li>
+                        <li>
+                            <a href="~/Home/Services">Services</a>
+                        </li>
+
+                        <li>
+                            <a href="~/Home/Enquiry">Enquiry</a>
+                        </li>
+                        <li>
+                            <a href="~/Home/Appointment">Appointment</a>
+                        </li>
+                        <li>
+                            <a href="blog.html">Feedback</a>
+                        </li>
+                        <li>
+                            <a href="contact.html">Contact</a>
+                        </li>
+                        @*<li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown
+                            <span class="caret"></span>
+                      </a>
+                      <ul class="dropdown-menu">
+                            <li>
+                                  <a href="#">Action</a>
+                            </li>
+                            <li>
+                                  <a href="#">Another action</a>
+                            </li>
+                            <li>
+                                  <a href="#">Something else here</a>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li>
+                                  <a href="#">Separated link</a>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li>
+                                  <a href="#">One more separated link</a>
+                            </li>
+                      </ul>
+                </li>*@
+                    </ul>
+
+                </div>
+
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+        <!--End Main Header -->
+    </div>
+    <main>
+        @RenderBody()
+    </main>
+    <footer class="footer-main">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="about-widget">
+                            <div class="footer-logo">
+                                <figure>
+                                    <a href="index.html">
+                                        <!--<img src="images/logo-2.png" alt="">-->
+                                    </a>
+                                </figure>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, temporibus?</p>
+                            <ul class="location-link">
+                                <li class="item">
+                                    <i class="fa fa-map-marker"></i>
+                                    <p>Modamba, NY 80021, United States</p>
+                                </li>
+                                <li class="item">
+                                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                    <a href="#">
+                                        <p>Support@medic.com</p>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <i class="fa fa-phone" aria-hidden="true"></i>
+                                    <p>(88017) +123 4567</p>
+                                </li>
+                            </ul>
+                            <ul class="list-inline social-icons">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <h6>Services</h6>
+                        <ul class="menu-link">
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-angle-right" aria-hidden="true"></i>Orthopadic Liabilities
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-angle-right" aria-hidden="true"></i>Dental Clinic
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-angle-right" aria-hidden="true"></i>Dormamu Clinic
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-angle-right" aria-hidden="true"></i>Psycological Clinic
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-angle-right" aria-hidden="true"></i>Gynaecological Clinic
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="social-links">
+                            <h6>Recent Posts</h6>
+                            <ul>
+                                <li class="item">
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <a href="#">
+                                                <img class="media-object" src="images/blog/post-thumb-small.jpg" alt="post-thumb">
+                                            </a>
+                                        </div>
+                                        <div class="media-body">
+                                            <h4 class="media-heading"><a href="#">Post Title</a></h4>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, dolorem.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <a href="#">
+                                                <img class="media-object" src="images/blog/post-thumb-small.jpg" alt="post-thumb">
+                                            </a>
+                                        </div>
+                                        <div class="media-body">
+                                            <h4 class="media-heading">
+                                                <a href="#">Post Title</a>
+                                            </h4>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, dolorem.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container clearfix">
+                <div class="copyright-text">
+                    <p>
+                        &copy; Copyright 2018. All Rights Reserved by
+                        <a href="index.html">Medic</a>
+                    </p>
+                </div>
+                <ul class="footer-bottom-link">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
                 </ul>
             </div>
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+    </footer>
+    <!--End footer-main-->
+    <!--End pagewrapper-->
+    <!--Scroll to top-->
+    <div class="scroll-to-top scroll-to-target" data-target=".header-top">
+        <span class="icon fa fa-angle-up"></span>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    <script src="~/plugins/jquery.js"></script>
+    <script src="~/plugins/bootstrap.min.js"></script>
+    <script src="~/plugins/bootstrap-select.min.js"></script>
+    <!-- Slick Slider -->
+    <script src="~/plugins/slick/slick.min.js"></script>
+    <!-- FancyBox -->
+    <script src="~/plugins/fancybox/jquery.fancybox.min.js"></script>
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+    <script src="~/plugins/google-map/gmap.js"></script>
+    <script src="~/plugins/validate.js"></script>
+
+
+    <script src="~/plugins/wow.js"></script>
+    <script src="~/plugins/jquery-ui.js"></script>
+    <link href="~/plugins/timePicker.css" rel="stylesheet" />
+    <script src="~/js/script.js"></script>
 </body>
 </html>
