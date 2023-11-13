@@ -124,6 +124,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AppointmentModel.cs" />
+    <Compile Include="Models\EnquiryModel.cs" />
+    <Compile Include="Models\FeedbackModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -131,12 +134,117 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="css\slider.css" />
+    <Content Include="css\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\about\1.jpg" />
+    <Content Include="images\about\enquirybgimage.jpeg" />
+    <Content Include="images\about\feedbackimage1.png" />
+    <Content Include="images\background\3.jpg" />
+    <Content Include="images\background\appoinment.jpg" />
+    <Content Include="images\background\promo-video.jpg" />
+    <Content Include="images\blog\1.png" />
+    <Content Include="images\blog\2.png" />
+    <Content Include="images\blog\3.png" />
+    <Content Include="images\blog\5.jpg" />
+    <Content Include="images\blog\6.jpg" />
+    <Content Include="images\blog\7.jpg" />
+    <Content Include="images\blog\8.jpg" />
+    <Content Include="images\blog\post-thumb-small.jpg" />
+    <Content Include="images\gallery\1.jpg" />
+    <Content Include="images\gallery\2.jpg" />
+    <Content Include="images\gallery\3.jpg" />
+    <Content Include="images\gallery\gallery-01.jpg" />
+    <Content Include="images\gallery\gallery-02.jpg" />
+    <Content Include="images\gallery\gallery-03.jpg" />
+    <Content Include="images\gallery\gallery-04.jpg" />
+    <Content Include="images\gallery\gallery-05.jpg" />
+    <Content Include="images\gallery\gallery-06.jpg" />
+    <Content Include="images\gallery\video-thumb-01.jpg" />
+    <Content Include="images\gallery\video-thumb-02.jpg" />
+    <Content Include="images\gallery\video-thumb-03.jpg" />
+    <Content Include="images\gallery\video-thumb-04.jpg" />
+    <Content Include="images\icons\icon-select.png" />
+    <Content Include="images\icons\preloader.gif" />
+    <Content Include="images\logo-2.png" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\resource\1.png" />
+    <Content Include="images\resource\2.png" />
+    <Content Include="images\resource\3.png" />
+    <Content Include="images\resource\4.png" />
+    <Content Include="images\services\service-five.jpg" />
+    <Content Include="images\services\service-four.jpg" />
+    <Content Include="images\services\service-one.jpg" />
+    <Content Include="images\services\service-three.jpg" />
+    <Content Include="images\services\service-two.jpg" />
+    <Content Include="images\slider\slider-bg-1.jpg" />
+    <Content Include="images\slider\slider-bg-2.jpg" />
+    <Content Include="images\slider\slider-bg-3.jpg" />
+    <Content Include="images\team\doctor-1.jpg" />
+    <Content Include="images\team\doctor-2.jpg" />
+    <Content Include="images\team\doctor-3.jpg" />
+    <Content Include="images\team\doctor-lab-1.jpg" />
+    <Content Include="images\team\doctor-lab-2.jpg" />
+    <Content Include="images\team\doctor-lab-3.jpg" />
+    <Content Include="images\team\event-1.jpg" />
+    <Content Include="images\team\event-2.jpg" />
+    <Content Include="images\team\event-3.jpg" />
+    <Content Include="images\testimonials\1.jpg" />
+    <Content Include="images\testimonials\1.png" />
+    <Content Include="images\testimonials\2.png" />
+    <Content Include="images\testimonials\3.png" />
+    <Content Include="js\script.js" />
+    <Content Include="plugins\animate.min.css" />
+    <Content Include="plugins\bootstrap-select.min.css" />
+    <Content Include="plugins\bootstrap-select.min.js" />
+    <Content Include="plugins\bootstrap.min.css" />
+    <Content Include="plugins\bootstrap.min.js" />
+    <Content Include="plugins\fancybox\jquery.fancybox.min.css" />
+    <Content Include="plugins\fancybox\jquery.fancybox.min.js" />
+    <Content Include="plugins\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="plugins\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="plugins\google-map\gmap.js" />
+    <Content Include="plugins\google-map\images\marker.png" />
+    <Content Include="plugins\jquery-ui.js" />
+    <Content Include="plugins\jquery-ui\images\ui-icons_444444_256x240.png" />
+    <Content Include="plugins\jquery-ui\images\ui-icons_555555_256x240.png" />
+    <Content Include="plugins\jquery-ui\images\ui-icons_777620_256x240.png" />
+    <Content Include="plugins\jquery-ui\images\ui-icons_777777_256x240.png" />
+    <Content Include="plugins\jquery-ui\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="plugins\jquery-ui\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="plugins\jquery-ui\jquery-ui.css" />
+    <Content Include="plugins\jquery.appear.js" />
+    <Content Include="plugins\jquery.js" />
+    <Content Include="plugins\slick\ajax-loader.gif" />
+    <Content Include="plugins\slick\fonts\slick.svg" />
+    <Content Include="plugins\slick\slick-theme.css" />
+    <Content Include="plugins\slick\slick.css" />
+    <Content Include="plugins\slick\slick.js" />
+    <Content Include="plugins\slick\slick.min.js" />
+    <Content Include="plugins\timePicker.css" />
+    <Content Include="plugins\timePicker.js" />
+    <Content Include="plugins\validate.js" />
+    <Content Include="plugins\wow.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="plugins\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="plugins\slick\config.rb" />
+    <Content Include="plugins\slick\fonts\slick.eot" />
+    <Content Include="plugins\slick\fonts\slick.ttf" />
+    <Content Include="plugins\slick\fonts\slick.woff" />
+    <Content Include="plugins\slick\slick-theme.less" />
+    <Content Include="plugins\slick\slick-theme.scss" />
+    <Content Include="plugins\slick\slick.less" />
+    <Content Include="plugins\slick\slick.scss" />
+    <Content Include="css\maps\style.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -159,13 +267,16 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Enquiry.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Services.cshtml" />
+    <Content Include="Views\Home\Appointment.cshtml" />
+    <Content Include="Views\Home\Feedback.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -179,6 +290,12 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataBaseAccessLayer\DataBaseAccessLayer.csproj">
+      <Project>{a8b3c978-459b-4628-aed4-b3c70a25b1ae}</Project>
+      <Name>DataBaseAccessLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
