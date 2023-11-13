@@ -7,11 +7,11 @@ namespace WellnessWaveHealth.Models
 {
     public class EnquiryModel
     {
-        public string Username { get; set; }
-        public string UserEmail { get; set; }
-        public long? ContactNumber { get; set; }
-        public string UserRemark { get; set; }
-        public string DoctorName { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public long? Phone { get; set; }
+        public string Remark { get; set; }
+        public string Doctor { get; set; }
         public List<string> DoctorList { get; set; }
         public bool isActive { get; set; }
     }

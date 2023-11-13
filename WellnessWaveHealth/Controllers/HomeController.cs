@@ -1,8 +1,10 @@
-﻿using System;
+﻿using DataBaseAccessLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WellnessWaveHealth.Models;
 
 namespace WellnessWaveHealth.Controllers
 {
@@ -28,11 +30,10 @@ namespace WellnessWaveHealth.Controllers
         }
         public ActionResult Enquiry()
         {
-            //RegistrationModel obj1 = new RegistrationModel();
-            //DoctorRepository obj2 = new DoctorRepository();
-            //obj1.DoctorList = obj2.GetDoctor();
-
-            return View();
+            DoctorRepository oDoctorRepository = new DoctorRepository();
+            EnquiryModel oEnquiryModel = new EnquiryModel();
+            oEnquiryModel.DoctorList = oDoctorRepository.GetDoctor();
+            return View(oEnquiryModel);
         }
         public ActionResult Services()
         {
@@ -42,6 +43,14 @@ namespace WellnessWaveHealth.Controllers
         {
             return View();
         }
-
+        public ActionResult Feedback()
+        {
+            DepartmentRepository oDepartmentRepository = new DepartmentRepository();
+            HospitalRepository oHospitalRepository = new HospitalRepository();
+            FeedbackModel oFeedbackModel = new FeedbackModel();
+            oFeedbackModel.DepartmentList = oDepartmentRepository.GetDepartment();
+            oFeedbackModel.HospitalList = oHospitalRepository.GetHospital();
+            return View(oFeedbackModel);
+        }
     }
 }
