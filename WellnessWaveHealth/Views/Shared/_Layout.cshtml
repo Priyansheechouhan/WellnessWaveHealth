@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>MedicCare</title>
+    <title>WellnessWaveCure</title>
 
 
     <!-- mobile responsive meta -->
@@ -23,6 +23,7 @@
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
+    @Scripts.Render("~/bundles/modernizr")
 </head>
 
 
@@ -76,7 +77,7 @@
                     <figure>
                         <a href="index.html">
                             @*<img src="~/project/medic-master/medic-master/images/logo.png" alt="" width="130" />*@
-
+                            <img src="~/images/about/logo1.png" alt="" height="60" />
                         </a>
                     </figure>
                 </div>
@@ -113,12 +114,12 @@
         <!--Header Upper-->
         <!--Main Header-->
         <nav class="navbar navbar-default">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="btn btn-white" style="float:right; margin:5px 0px;">
-                    <a href="#" class="btn-style-one" style="background-color: white; color: #48bdc5;">Log In</a>
+                    <a href="~/UserAccount/LogIN" class="btn-style-one" style="background-color: white; color: #48bdc5; border-radius:30px;">Log In</a>
                 </div>
                 <div class="btn btn-white" style="float: right; margin: 5px 0px;">
-                    <a href="#" class="btn-style-one" style="background-color: white; color: #48bdc5;">Sign Up</a>
+                    <a href="~/UserAccount/SignUp" class="btn-style-one" style="background-color: white; color: #48bdc5; border-radius: 30px;">Sign Up</a>
                 </div>
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
@@ -142,7 +143,9 @@
                         <li>
                             <a href="~/Home/Services">Services</a>
                         </li>
-
+                        <li>
+                            <a href="~/Home/Services">Specialities</a>
+                        </li>
                         <li>
                             <a href="~/Home/Enquiry">Enquiry</a>
                         </li>
@@ -150,35 +153,35 @@
                             <a href="~/Home/Appointment">Appointment</a>
                         </li>
                         <li>
-                            <a href="blog.html">Feedback</a>
+                            <a href="~/Home/Feedback">Feedback</a>
                         </li>
                         <li>
                             <a href="contact.html">Contact</a>
                         </li>
                         @*<li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown
-                            <span class="caret"></span>
-                      </a>
-                      <ul class="dropdown-menu">
-                            <li>
-                                  <a href="#">Action</a>
-                            </li>
-                            <li>
-                                  <a href="#">Another action</a>
-                            </li>
-                            <li>
-                                  <a href="#">Something else here</a>
-                            </li>
-                            <li role="separator" class="divider"></li>
-                            <li>
-                                  <a href="#">Separated link</a>
-                            </li>
-                            <li role="separator" class="divider"></li>
-                            <li>
-                                  <a href="#">One more separated link</a>
-                            </li>
-                      </ul>
-                </li>*@
+                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown
+                                        <span class="caret"></span>
+                                  </a>
+                                  <ul class="dropdown-menu">
+                                        <li>
+                                              <a href="#">Action</a>
+                                        </li>
+                                        <li>
+                                              <a href="#">Another action</a>
+                                        </li>
+                                        <li>
+                                              <a href="#">Something else here</a>
+                                        </li>
+                                        <li role="separator" class="divider"></li>
+                                        <li>
+                                              <a href="#">Separated link</a>
+                                        </li>
+                                        <li role="separator" class="divider"></li>
+                                        <li>
+                                              <a href="#">One more separated link</a>
+                                        </li>
+                                  </ul>
+                            </li>*@
                     </ul>
 
                 </div>
@@ -202,6 +205,7 @@
                                 <figure>
                                     <a href="index.html">
                                         <!--<img src="images/logo-2.png" alt="">-->
+                                        <img src="~/images/about/logo1.png" alt="" height="60" />
                                     </a>
                                 </figure>
                             </div>
@@ -268,7 +272,7 @@
                                     <div class="media">
                                         <div class="media-left">
                                             <a href="#">
-                                                <img class="media-object" src="images/blog/post-thumb-small.jpg" alt="post-thumb">
+                                                <img src="~/images/blog/post-thumb-small.jpg" class="media-object" alt="post-thumb" />
                                             </a>
                                         </div>
                                         <div class="media-body">
@@ -281,7 +285,7 @@
                                     <div class="media">
                                         <div class="media-left">
                                             <a href="#">
-                                                <img class="media-object" src="images/blog/post-thumb-small.jpg" alt="post-thumb">
+                                                <img src="~/images/blog/post-thumb-small.jpg" class="media-object" alt="post-thumb" />
                                             </a>
                                         </div>
                                         <div class="media-body">
@@ -308,13 +312,13 @@
                 </div>
                 <ul class="footer-bottom-link">
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="~/Home/Index">Home</a>
                     </li>
                     <li>
-                        <a href="about.html">About</a>
+                        <a href="~/Home/About">About</a>
                     </li>
                     <li>
-                        <a href="contact.html">Contact</a>
+                        <a href="~/Home/Contact">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -339,10 +343,14 @@
     <script src="~/plugins/google-map/gmap.js"></script>
     <script src="~/plugins/validate.js"></script>
 
-
+    @*<script src="~/js/AccountScript.js"></script>*@
     <script src="~/plugins/wow.js"></script>
     <script src="~/plugins/jquery-ui.js"></script>
     <link href="~/plugins/timePicker.css" rel="stylesheet" />
     <script src="~/js/script.js"></script>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 </body>
 </html>

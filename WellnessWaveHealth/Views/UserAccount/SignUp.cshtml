@@ -1,0 +1,112 @@
+﻿@model WellnessWaveHealth.Models.SignUpModel
+@{
+    ViewBag.Title = "SignUp";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--Page Title-->
+<section class="page-title text-center" style="background-image: url('../../images/background/signupbg.jpg');">
+    <div class="container">
+        <div class="title-text">
+            <h1>Sign Up</h1>
+            <ul class="title-menu clearfix">
+                <li>
+                    <a href="~/Home/Index">Home &nbsp;/</a>
+                </li>
+                <li>Sign Up</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!--End Page Title-->
+<!-- Signup Section -->
+<section class="blog-section section style-three pb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="appointment-image-holder" style="margin-top:80px">
+                    <figure>
+                        <img src="~/images/about/Signupimage.jpg" height="350" />
+                    </figure>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="contact-area style-two">
+                    <div class="section-title">
+                        <h3>Sign <span>Up</span></h3>
+                    </div>
+                    @using (Html.BeginForm("SignUp", "UserAccount", FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+                        <form name="contact_form" class="default-form contact-form" action="SignUp" method="post">
+                            <div class="row">
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+
+                                        @Html.TextBoxFor(name => name.FirstName, new { @placeholder = "First Name", required = "" })
+                                        @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="form-group">
+
+                                        @Html.TextBoxFor(email => email.Email, new { @placeholder = "Email", required = "", id = "email", onkeyup = "emailcheck()" })
+                                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                        <span id="emailError"></span>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+
+                                        @Html.TextBoxFor(name => name.LastName, new { @placeholder = "Last Name", required = "" })
+                                        @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.TextBoxFor(phone => phone.Phone, new { @placeholder = "Phone Number", required = "", id = "mobile", onkeyup = "numcheck(this)" })
+                                        @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        @Html.TextBoxFor(password => password.Password, new { @placeholder = "Password", @type = "password", required = "", id = "password", onkeyup = "validatepassword()" })
+                                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                        <span class="toggle-password" onclick="togglePasswordVisibility()"><i class="fa fa-eye"></i></span>
+
+
+
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.TextBoxFor(Cpassword => Cpassword.ConfirmPassword, new { @placeholder = "Confirm Password", @type = "password", required = "", id = "Cpassword" })
+                                        @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                                        <span class="toggle-password" onclick="togglePasswordVisibility()"><i class="fa fa-eye"></i></span>
+                                    </div>
+                                    <p>
+                                        if you already have an account than @Html.ActionLink("LogIn here", "LogIN")
+                                        <div class="col-md-12 col-sm-12 col-xs-12" style="padding:0px">
+
+
+                                            <div class="form-group text-center">
+                                                <button type="submit" class="btn-style-one">SignUp</button>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </form>
+                    }
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<div style="text-align:center; margin:40px 0px;">
+    <h1>@ViewBag.status</h1>
+</div>
+<!-- End signup Section -->
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

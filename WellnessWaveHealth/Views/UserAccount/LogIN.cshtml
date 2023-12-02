@@ -1,0 +1,91 @@
+﻿
+@model WellnessWaveHealth.Models.LogINModel
+
+@{ ViewBag.Title = "Login";
+                Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+<!--Page Title-->
+<section class="page-title text-center" style="background-image: url('../../images/background/signupbg.jpg');">
+    <div class="container">
+        <div class="title-text">
+            <h1>Login</h1>
+            <ul class="title-menu clearfix">
+                <li>
+                    <a href="~/Home/Index">home &nbsp;/</a>
+                </li>
+                <li>Login</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!--End Page Title-->
+<!-- Signup Section -->
+<section class="blog-section section style-three pb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="appointment-image-holder" style="margin-top:80px">
+                    <figure>
+                        <img src="~/images/about/Loginimage.jpg" height="400" />
+                    </figure>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="contact-area style-two">
+                    <div class="section-title">
+                        <h3>Login</h3>
+                    </div>
+                    @using (Html.BeginForm("Login", "UserAccount",new {ReturnUrl= ViewBag.returnUrl } ,FormMethod.Post))
+                    {
+                            @Html.AntiForgeryToken()
+                        <form name="contact_form" class="default-form contact-form" action="Login" method="post">
+                            <div class="row">
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+
+                                        @Html.TextBoxFor(email => email.Email, new { @placeholder = "Enter Email/Username", required = "", id = "email", onkeyup = "validateemail()" })
+                                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                        <span id="emailError"></span>
+                                    </div>
+
+                                    <div class="form-group">
+
+                                        @Html.TextBoxFor(password => password.Password, new { @placeholder = "Enter your password", @type = "password", required = "", id = "password", onkeyup = "validatepassword()" })
+                                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                        <span class="toggle-password" onclick="togglePasswordVisibility()"><i class="fa fa-eye"></i></span>
+                                        <span id="passwordError"></span>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="form-group text-center">
+                                        <button type="submit" class="btn-style-one">LogIn</button>
+                                    </div>
+                                </div>
+                                <div style="text-align:center;">
+                                    @Html.ActionLink("Forgotten password?", "ForgotPassword", new { @disabled = "disabled" })
+                                </div>
+                                <div style="align-items: center; border-bottom: 1px solid #dadde1; display: flex; margin: 20px 16px; text-align: center;"></div>
+                                <div>
+                                    <div class="form-group text-center" style="margin: 20px 140px;">
+                                        <button type="button" class="btn-style-one">@Html.ActionLink("Create new Account", "SignUp")</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                     }
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<div>
+
+</div>
+<!-- End signup Section -->
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

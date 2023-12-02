@@ -121,12 +121,20 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UserAccountController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="List\DoctorList.cs" />
+    <Compile Include="List\SpecialityList.cs" />
     <Compile Include="Models\AppointmentModel.cs" />
+    <Compile Include="Models\ContactModel.cs" />
+    <Compile Include="Models\DoctorModel.cs" />
     <Compile Include="Models\EnquiryModel.cs" />
     <Compile Include="Models\FeedbackModel.cs" />
+    <Compile Include="Models\SignUpModel.cs" />
+    <Compile Include="Models\SpecialitiesModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -143,9 +151,14 @@
     <Content Include="images\about\1.jpg" />
     <Content Include="images\about\enquirybgimage.jpeg" />
     <Content Include="images\about\feedbackimage1.png" />
+    <Content Include="images\about\Loginimage.jpg" />
+    <Content Include="images\about\logo1.png" />
+    <Content Include="images\about\Signupimage.jpg" />
+    <Content Include="images\about\signupimage11.png" />
     <Content Include="images\background\3.jpg" />
     <Content Include="images\background\appoinment.jpg" />
     <Content Include="images\background\promo-video.jpg" />
+    <Content Include="images\background\signupbg.jpg" />
     <Content Include="images\blog\1.png" />
     <Content Include="images\blog\2.png" />
     <Content Include="images\blog\3.png" />
@@ -196,6 +209,7 @@
     <Content Include="images\testimonials\1.png" />
     <Content Include="images\testimonials\2.png" />
     <Content Include="images\testimonials\3.png" />
+    <Content Include="js\AccountScript.js" />
     <Content Include="js\script.js" />
     <Content Include="plugins\animate.min.css" />
     <Content Include="plugins\bootstrap-select.min.css" />
@@ -246,6 +260,7 @@
     <Content Include="plugins\slick\slick.scss" />
     <Content Include="css\maps\style.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -274,6 +289,12 @@
     <Content Include="Views\Home\Services.cshtml" />
     <Content Include="Views\Home\Appointment.cshtml" />
     <Content Include="Views\Home\Feedback.cshtml" />
+    <Content Include="Views\Shared\DisplayDoctor.cshtml" />
+    <Content Include="Views\UserAccount\SignUp.cshtml" />
+    <Content Include="Views\UserAccount\LogIN.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\UserAccount\ForgotPassword.cshtml" />
+    <Content Include="Views\Shared\_ForgotPassPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -295,6 +316,14 @@
     <ProjectReference Include="..\DataBaseAccessLayer\DataBaseAccessLayer.csproj">
       <Project>{a8b3c978-459b-4628-aed4-b3c70a25b1ae}</Project>
       <Name>DataBaseAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EmailHelper\EmailHelper.csproj">
+      <Project>{8a9ee6ed-07e3-4a03-898c-cdf8d5b30c42}</Project>
+      <Name>EmailHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SMSHelper\SMSHelper.csproj">
+      <Project>{fc5943b1-3be2-4482-aba4-c6977d269e04}</Project>
+      <Name>SMSHelper</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -1,0 +1,10 @@
+﻿@model WellnessWaveHealth.Models.DoctorModel
+
+<option value="">Select Doctor</option>
+@if (ViewBag.Doctor != null)
+{
+    foreach (var item in ViewBag.Doctor)
+    {
+        <option @item.Value>@item.Text</option>
+    }
+}

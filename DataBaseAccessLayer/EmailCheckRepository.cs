@@ -7,39 +7,36 @@ using System.Threading.Tasks;
 
 namespace DataBaseAccessLayer
 {
-    public class DoctorRepository
+    public class EmailCheckRepository
     {
-        public List<string> GetDoctor()
+        public bool CheckEmail(string UserEmail)
         {
-            List<string> Doctorlist = new List<string>();
-
+            string Email = null;
+            bool status = false;
             string connection = "Data Source=.;Initial Catalog=HealthcareProject;Integrated Security=sspi";
             SqlConnection connect = new SqlConnection(connection);
-            SqlCommand command = new SqlCommand("DOCTOR_PR0C", connect);
-            command.CommandType = System.Data.CommandType.StoredProcedure;
+            SqlCommand command = new SqlCommand("SELECT EMAIL FROM TBL_SIGNUP", connect);
+            command.CommandType = System.Data.CommandType.Text;
             try
             {
                 connect.Open();
                 SqlDataReader rd = command.ExecuteReader();
                 while (rd.Read())
                 {
-                    Doctorlist.Add(rd["DOCTOR_NAME"].ToString());
-                    
+                    //Email = Add(rd["EMAIL"].ToString());
+                    Email = Convert.ToString(rd["EMAIL"]);
+                    if (Email == UserEmail)
+                    {
+                        status = true;
+                    }
                 }
                 rd.Close();
             }
             catch (Exception e)
             {
-
+                status = false;
             }
-            finally
-            {
-                if (connect.State == System.Data.ConnectionState.Open)
-                {
-                    connect.Close();
-                }
-            }
-            return Doctorlist;
+            return status;
         }
     }
 }

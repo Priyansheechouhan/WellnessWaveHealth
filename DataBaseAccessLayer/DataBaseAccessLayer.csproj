@@ -41,11 +41,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppointmentRepository.cs" />
     <Compile Include="DepartmentRepository.cs" />
     <Compile Include="DoctorRepository.cs" />
+    <Compile Include="EmailCheckRepository.cs" />
     <Compile Include="EnquiryRepository.cs" />
+    <Compile Include="FeedbackRepository.cs" />
     <Compile Include="HospitalRepository.cs" />
+    <Compile Include="LogInValidation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SignUpRepository.cs" />
+    <Compile Include="Specializationlist.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EmailHelper\EmailHelper.csproj">
+      <Project>{8a9ee6ed-07e3-4a03-898c-cdf8d5b30c42}</Project>
+      <Name>EmailHelper</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

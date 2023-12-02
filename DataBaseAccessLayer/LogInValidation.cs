@@ -7,30 +7,42 @@ using System.Threading.Tasks;
 
 namespace DataBaseAccessLayer
 {
-    public class DoctorRepository
+    public class LogInValidation
     {
-        public List<string> GetDoctor()
+        public bool CheckUserForLogin(string UserEmail,string Password)
         {
-            List<string> Doctorlist = new List<string>();
-
+            string Email = null;
+            string Pass = null;
+            bool status = false;
             string connection = "Data Source=.;Initial Catalog=HealthcareProject;Integrated Security=sspi";
             SqlConnection connect = new SqlConnection(connection);
-            SqlCommand command = new SqlCommand("DOCTOR_PR0C", connect);
-            command.CommandType = System.Data.CommandType.StoredProcedure;
+            SqlCommand command = new SqlCommand("select * from TBL_SIGNUP", connect);
+            command.CommandType = System.Data.CommandType.Text;
             try
             {
                 connect.Open();
                 SqlDataReader rd = command.ExecuteReader();
                 while (rd.Read())
                 {
-                    Doctorlist.Add(rd["DOCTOR_NAME"].ToString());
+                    //Email = Add(rd["EMAIL"].ToString());
+                    Email = Convert.ToString(rd["EMAIL"]);
+                    Pass = Convert.ToString(rd["PASSWORD"]);
+                    if(Email== UserEmail && Pass== Password)
+                    {
+                        status = true;
+                        break;
+                    }
+                    else
+                    {
+                        status = false;
+                    }
                     
                 }
                 rd.Close();
             }
             catch (Exception e)
             {
-
+                return false;
             }
             finally
             {
@@ -39,7 +51,8 @@ namespace DataBaseAccessLayer
                     connect.Close();
                 }
             }
-            return Doctorlist;
+
+            return status;
         }
     }
 }

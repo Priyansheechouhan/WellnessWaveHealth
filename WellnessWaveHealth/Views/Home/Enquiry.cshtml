@@ -8,7 +8,7 @@
 <section class="page-title text-center" style="background-image: url('../../images/background/3.jpg');">
     <div class="container">
         <div class="title-text">
-            <h1>appointment</h1>
+            <h1>Enquiry</h1>
             <ul class="title-menu clearfix">
                 <li>
                     <a href="~/Home/Index">home &nbsp;/</a>
@@ -56,7 +56,7 @@
                                         @Html.TextBoxFor(phone => phone.Phone, new { @placeholder = "Phone", required = "" })
                                     </div>
                                     <div class="form-group">
-                                       @Html.DropDownListFor(doctor=>doctor.Doctor,new SelectList(Model.DoctorList))
+                                       @Html.DropDownListFor(doctor=>doctor.Doctor,new SelectList(Model.DoctorList),new {@placeholder="select doctor"})
                                     </div>
                                 </div>
                                 <div class="col-md-12 col-sm-12 col-xs-12">
@@ -78,8 +78,15 @@
         </div>
     </div>
 </section>
-<div>
-
+<div class="container" style="text-align:right;">
+    <h1>@ViewBag.returnStatus</h1>
+    <p>@ViewBag.returnmessage</p>
+    @*<div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @ViewBag.returnStatus
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>*@
 </div>
 <!-- End enquiry Section -->
 

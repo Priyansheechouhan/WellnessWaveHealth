@@ -11,9 +11,11 @@ namespace WellnessWaveHealth.Models
         public long? Phone { get; set; }
         public string Date { get; set; }
         public string Email { get; set; }
-        public string Department { get; set; }
-        public List<string> DepartmentList { get; set; }
+        public int Speciality_Id { get; set; }
+        public string speciality { get; set; }
         public string Doctor { get; set; }
+        public int Doctor_Id { get; set; }
+
         public List<string> DoctorList { get; set; }
         public string Message { get; set; }
     }

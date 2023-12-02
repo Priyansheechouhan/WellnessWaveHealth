@@ -28,58 +28,54 @@
                     <div class="section-title">
                         <h3>Request <span>Appointment</span></h3>
                     </div>
-                @using (Html.BeginForm("Appointment", "Home", FormMethod.Post))
-                {
-                <form name="contact_form" class="default-form contact-form" action="Appointment" method="post">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-12 col-xs-12">
-                            <div class="form-group">
+                    @using (Html.BeginForm("Appointment", "Home", FormMethod.Post))
+                    {
+                        <form name="contact_form" class="default-form contact-form" action="Appointment" method="post">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+
+                                        @Html.TextBoxFor(name => name.Name, new { @placeholder = "Name", required = "" })
+                                    </div>
+                                    <div class="form-group">
+
+                                        @Html.TextBoxFor(email => email.Email, new { @placeholder = "Email", required = "" })
+                                    </div>
+                                    <div class="form-group">
+
+                                        @*@Html.DropDownList("StateId", ViewBag.States as SelectList, "Select State", new { id = "ddlStates" })*@
+                                        @Html.DropDownListFor(model=>model.speciality, ViewBag.specialities as SelectList, "Select Specialities", new { id = "Speciality_Id" })
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+
+                                        @Html.TextBoxFor(phone => phone.Phone, new { @placeholder = "Phone", required = "" })
+                                    </div>
+                                    <div class="form-group">
+
+                                        @Html.TextBoxFor(date => date.Date, new { @placeholder = "Date", required = "", @id = "datepicker" })
+                                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.DropDownListFor(model => model.Doctor, new SelectList(""), "Select Doctor", new { id = "Doctor_Id" })
+
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+
+                                        @Html.TextAreaFor(message => message.Message, new { @placeholder = "Your Message", required = "" })
+                                    </div>
+                                    <div class="form-group text-center">
                                
-                                @Html.TextBoxFor(name => name.Name, new {@placeholder="Name", required = "" }) 
+                                        <button type="submit" class="btn-style-one">submit now</button>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                
-                               @Html.TextBoxFor(email => email.Email, new { @placeholder = "Email", required = "" })
-                            </div>
-                            <div class="form-group">
-                                <select name="subject">
-                                    <option>Departments</option>
-                                    <option>Diagnostic</option>
-                                    <option>Psychological</option>
-                                </select>
-                                @*@Html.DropDownListFor(department=>department.Department,new SelectList(Model.DepartmentList))*@
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-12 col-xs-12">
-                            <div class="form-group">
-                                
-                                @Html.TextBoxFor(phone => phone.Phone, new { @placeholder = "Phone", required = "" })
-                            </div>
-                            <div class="form-group">
-                                
-                                @Html.TextBoxFor(date => date.Date, new {@placeholder="Date",required="",@id= "datepicker" })
-                                <i class="fa fa-calendar" aria-hidden="true"></i>
-                            </div>
-                            <div class="form-group">
-                                <select name="subject">
-                                    <option>Doctor</option>
-                                    <option>Diagnostic</option>
-                                    <option>Psychological</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="form-group">
-                                
-                                @Html.TextAreaFor(message => message.Message, new {@placeholder= "Your Message",required="" })
-                            </div>
-                            <div class="form-group text-center">
-                                <button type="submit" class="btn-style-one">submit now</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-                }
+                        </form>
+                    }
                 </div>
             </div>
             <div class="col-md-6 col-sm-12 col-xs-12">
@@ -92,8 +88,8 @@
         </div>
     </div>
 </section>
-<div>
-
+<div class="container" style="justify-content:center;align-content:center;">
+    <h1></h1>
 </div>
 <!-- End Contact Section -->
 <!--team section-->
@@ -112,8 +108,8 @@
         <div class="row">
             <div class="col-md-4 col-sm-6 col-xs-12">
                 <div class="team-member">
-                    
-                    <img src="~/images/team/doctor-2.jpg" alt="doctor" class="img-responsive"/>
+
+                    <img src="~/images/team/doctor-2.jpg" alt="doctor" class="img-responsive" />
                     <div class="contents text-center">
                         <h4>Dr. Robert Barrethion</h4>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, aspernatur.</p>
@@ -123,8 +119,8 @@
             </div>
             <div class="col-md-4 col-sm-6 col-xs-12">
                 <div class="team-member">
-                  
-                    <img src="~/images/team/doctor-lab-3.jpg" alt="doctor" class="img-responsive"/> 
+
+                    <img src="~/images/team/doctor-lab-3.jpg" alt="doctor" class="img-responsive" />
                     <div class="contents text-center">
                         <h4>Dr. Marry Lou</h4>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, aspernatur.</p>
@@ -134,8 +130,8 @@
             </div>
             <div class="col-md-4 col-sm-6 col-xs-12">
                 <div class="team-member">
-                    
-                    <img src="~/images/team/event-2.jpg" alt="doctor" class="img-responsive"/>
+
+                    <img src="~/images/team/event-2.jpg" alt="doctor" class="img-responsive" />
                     <div class="contents text-center">
                         <h4>Dr. Sansa Stark</h4>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, aspernatur.</p>
@@ -147,3 +143,26 @@
     </div>
 </section>
 <!--End team section-->
+<!--sript-->
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#Doctor_Id').attr('disabled', 'disabled');
+
+        $("#Speciality_Id").change(function () {
+            var Speciality_Id = $(this).val();
+            debugger
+            $.ajax({
+                type: "post",
+                url: "/Home/GetDoctor?Speciality_Id=" + Speciality_Id,
+                contentType: "html",
+                success: function (response) {
+                    debugger
+                    $('#Doctor_Id').removeAttr('disabled');
+                    $("#Doctor_Id").empty();
+                    $("#Doctor_Id").append(response);
+                }
+            })
+        })
+    })
+</script>

@@ -7,7 +7,7 @@
 <section class="page-title text-center" style="background-image: url('../../images/background/3.jpg');">
     <div class="container">
         <div class="title-text">
-            <h1>appointment</h1>
+            <h1>Feedback</h1>
             <ul class="title-menu clearfix">
                 <li>
                     <a href="~/Home/Index">home &nbsp;/</a>
@@ -73,7 +73,7 @@
                                 <div class="col-md-12 col-sm-12 col-xs-12">
                                     <div class="form-group">
 
-                                        @Html.TextAreaFor(suggestion=>suggestion.Suggestion, new { @placeholder = "Your Query", required = "" })
+                                        @Html.TextAreaFor(suggestion=>suggestion.Suggestion, new { @placeholder = "Your Suggestion..", required = "" })
                                     </div>
 
                                     <div class="form-group text-center">
@@ -89,7 +89,8 @@
         </div>
     </div>
 </section>
-<div>
-
+<div style="text-align:center; margin:40px 0px;" >
+    <h1>@ViewBag.FStatus</h1>
+    <p>@ViewBag.FstatusP</p>
 </div>
 <!-- End feedback Section -->

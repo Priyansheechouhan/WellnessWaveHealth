@@ -2,29 +2,35 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
+using WellnessWaveHealth.Models;
 
-namespace DataBaseAccessLayer
+namespace WellnessWaveHealth.List
 {
-    public class DoctorRepository
+    public class SpecialityList
     {
-        public List<string> GetDoctor()
+
+        public List<SpecialitiesModel> GetSpecialzationList()
         {
-            List<string> Doctorlist = new List<string>();
+            List<SpecialitiesModel> SpecializationList = new List<SpecialitiesModel>();
 
             string connection = "Data Source=.;Initial Catalog=HealthcareProject;Integrated Security=sspi";
             SqlConnection connect = new SqlConnection(connection);
-            SqlCommand command = new SqlCommand("DOCTOR_PR0C", connect);
-            command.CommandType = System.Data.CommandType.StoredProcedure;
+            SqlCommand command = new SqlCommand("select speciality_id,specialities from tbl_Specialization", connect);
+            command.CommandType = System.Data.CommandType.Text;
             try
             {
                 connect.Open();
                 SqlDataReader rd = command.ExecuteReader();
                 while (rd.Read())
                 {
-                    Doctorlist.Add(rd["DOCTOR_NAME"].ToString());
-                    
+                    SpecializationList.Add(new SpecialitiesModel
+                    {
+                        Speciality_Id = Convert.ToInt32(rd["speciality_id"]),
+                        Specialities = rd["specialities"].ToString()
+                    });
+
+
                 }
                 rd.Close();
             }
@@ -39,7 +45,7 @@ namespace DataBaseAccessLayer
                     connect.Close();
                 }
             }
-            return Doctorlist;
+            return SpecializationList;
         }
     }
 }
